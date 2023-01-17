@@ -10,39 +10,21 @@ namespace TestProject1
 {
     internal class SearchBar
     {
-        IWebDriver driver;
 
-        public void InitBrowser()
+        public void LoadApplication(string url, IWebDriver driver)
         {
-            driver = new ChromeDriver("C:\\bootcamp ness\\drivers");
+            driver.Url = url;
         }
 
-        public void LoadApplication(string url)
-        {
-            this.driver.Url = url;
-        }
-
-        public void SetTextSearch(string text)
+        public void SetTextSearch(string text, IWebDriver driver)
         {
             var set = driver.FindElement(By.Id("gh-ac"));
             set.SendKeys(text);
         }
 
-        public void ClickSearch()
+        public void ClickSearch(IWebDriver driver)
         {
             var click = driver.FindElement(By.Id("gh-btn"));
-            click.Click();
-        }
-
-        public void SetTextPrice(string price)
-        {
-            var set = driver.FindElement(By.Id("s0-52-12-0-1-2-6-0-8[3]-0-textrange-beginParamValue-textbox"));
-            set.SendKeys(price);
-        }
-
-        public void ClickPrice()
-        {
-            var click = driver.FindElement(By.XPath("//*[@id=\"s0-52-12-0-1-2-6-0-8[3]-0-textrange\"]/div/div[3]/button"));
             click.Click();
         }
     }

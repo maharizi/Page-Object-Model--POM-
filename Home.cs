@@ -10,7 +10,6 @@ namespace TestProject1
     internal class Home
     {
         public Page page;
-        IWebDriver driver;
         public Home() { 
         this.page = new Page();
         }
